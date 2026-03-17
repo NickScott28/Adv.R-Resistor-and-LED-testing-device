@@ -1,16 +1,15 @@
 Led Tester
-- display
-  - shows information 
-- resistor
-  - current goes through this to light led
-- tester probes
-  - complete the circuit when connected to led to see if it works by running current through it
+ display
+   -shows information 
+ voltage reference
+   -https://github.com/rlogiacco/VoltageReference 
 
 Ohmeter
-- varius resistors
-  - allow for different resistors to check to see the resistance value of the unknown resisitor
-- voltage divider circuit
-  - switches between varius resistors
-  - knows which resitor to switch to based on input
-- digital voltmeter
-  - displays the ohms of the unknown resitor
+ varius resistors
+   -allow for different resistors to check to see the resistance value of the unknown resisitor
+ voltage divider circuit
+   -switches between varius resistors
+   -knows which resitor to switch to based on input
+ digital voltmeter
+   -displays the ohms of the unknown resitor
+   -https://github.com/CFMVCarlos/OhmCalculator
