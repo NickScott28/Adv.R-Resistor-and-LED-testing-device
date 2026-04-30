@@ -1,28 +1,28 @@
 //C++
 // Ohmmeter Better
 
-const int analogInPin = A0;   // Analog pin to measure voltage
-const int pinCount = 4;       // Number of reference resistors
+const int analogInPin = A0;   // measure voltage
+const int pinCount = 4;       // Number of ref resistors
 int refPins[pinCount] = {4, 5, 6, 7}; // Pins for ref resistors
 float refValues[pinCount] = {1000.0, 10000.0, 100000.0, 1000000.0, }; // Values in Ohms
 
 void setup() {
   Serial.begin(9600);                
   for (int i = 0; i < pinCount; i++) {
-    pinMode(refPins[i], INPUT); // Set as input (high impedance) initially
+    pinMode(refPins[i], INPUT); // Set as input
   }
 }
 
 void loop() {
   for (int i = 0; i < pinCount; i++) {
-    // 1. Activate one reference resistor
+    // 1. Activate one ref resistor
     pinMode(refPins[i], OUTPUT);
     digitalWrite(refPins[i], HIGH);
     delay(10); // Settle time
 
     // 2. Read Voltage
     int rawValue = analogRead(analogInPin);
-    float vOut = (5.0 * rawValue) / 1023.0; // Vcc = 5V
+    float vOut = (5.0 * rawValue) / 1023.0;
 
     // 3. Calculate Resistance if within valid range (avoiding too low/high)
     if (vOut > 0.8 && vOut < 4.2) {
@@ -32,7 +32,7 @@ void loop() {
       Serial.println(" Ohms");
     }
 
-    // 4. Deactivate reference resistor
+    // 4. Deactivate ref resistor
     digitalWrite(refPins[i], LOW);
     pinMode(refPins[i], INPUT);
     delay(100);
