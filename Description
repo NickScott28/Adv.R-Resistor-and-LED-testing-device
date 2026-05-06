@@ -1,0 +1,25 @@
+to build this ohmmeter youll need materials and specifically the 4 resistors mentioned in the 
+code. a 1000ohm, 10000ohm, 100000ohm, and 1000000ohm resistors
+
+Reference resistors:
+
+- connect these resistors from the digital pins in the order that they are in the code to a breadboard
+- connect the other end of the resistors to a line on a breadboard
+- connect this line to the A0 analog pin so they are all able to be used as reference resistors
+- this connects the group of resistors together at the end so that the connection point between them 
+and the test resisotr can be measured to find Vout
+
+Test resistor:
+
+- connect one end of the test resistor to the ground pin
+- connect the other end of the test resistor to the same A0 analog pin line on the bread board
+- this completes the voltage divider circuit that is used in the code
+- the known input voltage, output voltage, and resistor values complets the equation to solve for the test resistor
+- the code then uses each of the resitors in order then cuts out the test resistor values that are 
+the least accurate based on voltage output
+
+you can then attach the ends of any resistor between 200 and 4.5 million ohms for most accurate readings 
+as the lower and upper ends are inaccurate
+
+Design in TinkerCad:
+https://www.tinkercad.com/things/absR6OP9mc8-ohmmeter-better/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fall
